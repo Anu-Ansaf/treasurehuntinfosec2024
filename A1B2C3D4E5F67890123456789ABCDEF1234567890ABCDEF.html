@@ -41,16 +41,7 @@
         }
     </style>
 </head>
-<body>
-    <div class="winner-container">
-        <h1>You Are the Winner of the Treasure Hunt!</h1>
-        <p>"Avoid using simple passwords like 'password' to keep your accounts safe."</p>
-        <img src="treasure.png" alt="Treasure Image">
-        <p>Meet you at Mainstreet to collect the treasure!!</p>
-    </div>
-
-    <script>
-        window.onload = function() {
+        <script>
  
         console.log("Window has fully loaded!");
         // Check if the user is authenticated
@@ -60,9 +51,15 @@
         if (isAuthenticated !== "true") {
             window.location.href = "index.html";
         }
-        };
-
-        
     </script>
+<body>
+    <div class="winner-container">
+        <h1>You Are the Winner of the Treasure Hunt!</h1>
+        <p>"Avoid using simple passwords like 'password' to keep your accounts safe."</p>
+        <img src="treasure.png" alt="Treasure Image">
+        <p>Meet you at Mainstreet to collect the treasure!!</p>
+    </div>
+
+
 </body>
 </html>
