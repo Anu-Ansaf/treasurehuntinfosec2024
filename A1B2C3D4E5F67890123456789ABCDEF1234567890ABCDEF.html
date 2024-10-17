@@ -50,6 +50,9 @@
     </div>
 
     <script>
+        window.onload = function() {
+ 
+        console.log("Window has fully loaded!");
         // Check if the user is authenticated
         const isAuthenticated = localStorage.getItem("authenticated");
 
@@ -57,6 +60,9 @@
         if (isAuthenticated !== "true") {
             window.location.href = "index.html";
         }
+        };
+
+        
     </script>
 </body>
 </html>
