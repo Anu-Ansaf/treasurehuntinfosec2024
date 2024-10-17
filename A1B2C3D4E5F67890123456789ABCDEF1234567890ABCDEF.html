@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations! You Are the Winner</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f5f7fa;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            text-align: center;
+        }
+
+        .winner-container {
+            background: #fff;
+            width: 400px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 40%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="winner-container">
+        <h1>You Are the Winner of the Treasure Hunt!</h1>
+        <p>"Avoid using simple passwords like 'password' to keep your accounts safe."</p>
+        <img src="treasure.png" alt="Treasure Image">
+        <p>Meet you at Mainstreet to collect the treasure!!</p>
+    </div>
+
+    <script>
+        // Check if the user is authenticated
+        const isAuthenticated = localStorage.getItem("authenticated");
+
+        // Redirect to the index.html if not authenticated
+        if (isAuthenticated !== "true") {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

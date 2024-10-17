@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" id="loginForm">
+            <h2>Admin Login</h2>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+
+    const encryptedUsername = customEncrypt(username);
+    const encryptedPassword = customEncrypt(password);
+    
+
+    const expectedEncryptedValue = "rcuuyqtf";
+    const expectedEncryptedValueUsername = "cfokp";
+    
+
+
+    if (encryptedPassword === expectedEncryptedValue && encryptedUsername == expectedEncryptedValueUsername) {
+
+        localStorage.setItem("authenticated", "true");
+
+        window.location.href = "/A1B2C3D4E5F67890123456789ABCDEF1234567890ABCDEF.html";
+    } else {
+        // Show an error message or alert
+        alert("Invalid username or password. Please try again.");
+    }
+});
+
+// Custom simple encryption function (Caesar Cipher-like for example)
+function customEncrypt(input) {
+    const shift = 2; // Shift each character by 2 ASCII values
+    let encrypted = "";
+    
+    for (let i = 0; i < input.length; i++) {
+        encrypted += String.fromCharCode(input.charCodeAt(i) + shift);
+    }
+    
+    return encrypted;
+}
+
+    </script>
+</body>
+</html>
